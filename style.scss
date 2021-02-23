@@ -1,0 +1,179 @@
+/*Text*/
+
+$desaturated-blue: hsl(238, 29%, 16%);
+$soft-red: hsl(14, 88%, 65%);
+
+/*Background gradient*/
+
+$violet: hsl(273, 75%, 66%);
+$soft-blue: hsl(240, 73%, 65%);
+
+/*Neutral*/
+
+//Text
+
+$very-dark-grayish-blue: hsl(237, 12%, 33%);
+$dark-grayish-blue: hsl(240, 6%, 50%);
+
+/*Dividers*/
+
+$light-grayish-blue: hsl(240, 5%, 91%);
+
+/* Typography */
+$size: 12px;
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap');
+$font: "Kumbh Sans";
+$normal : 400;
+$bold: 700;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: $size;
+    font-family: $font;
+    font-weight: $normal;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient( $violet, $soft-blue);
+    /*card component styling*/
+    .content-wrapper{
+        height: 518px;
+        padding: 20px 30px;
+        border-radius: 20px;
+        background-color: white;
+        background-repeat: no-repeat;
+        background-position: -30% 0;
+        background-size: contain;
+        background-image: url(images/bg-pattern-desktop.svg);
+        box-shadow: -1px 19px 19px 1px rgba(21, 20, 32, 0.19);
+        .row{
+            padding: 50px 0;
+            /*image wrapper styling*/
+            .image-wrapper{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                img{
+                    max-width: 100%;
+                    height: auto;
+                }
+                .box{
+                    margin-left: -110%;
+                    margin-bottom: -20%;
+                    position: relative;
+                    z-index: 2;
+                }
+                .woman{
+                    margin-left: -50%;
+                    position: absolute;
+                    z-index: 1;
+                }
+            }
+            /*FAQ wrapper styling*/
+            .faq-wrapper{
+                padding: 0 50px 0 0;
+                display: flex;
+                flex-direction: column;
+                hr{
+                    background: $light-grayish-blue;
+                }
+                h1{
+                    font-weight: $bold;
+                    color: $desaturated-blue;
+                }
+                .faq{
+                    border-bottom: 1px solid $light-grayish-blue;
+                    .question{
+                        width: 100%;
+                        color: $very-dark-grayish-blue;
+                        padding: 10px 0;
+                        
+
+                        &:focus, &:hover{
+                            cursor: pointer;
+                            color: $soft-red;
+                        }
+                        img{
+                            float: right;
+                        }
+                        
+                        
+                    }
+                    .answer{
+                        display: none;
+                        color: $dark-grayish-blue;
+                    }
+                }
+                
+            }
+
+        }
+
+    }
+    /*Footer section wrapper*/
+    .attribution { 
+        font-size: 13px; 
+        text-align: center; 
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: #333;
+        color: white;
+    
+        a { 
+            color: rgb(14, 212, 40); 
+        }
+    }
+}
+/*Reponsiveness*/
+@media screen and (max-width: 767px){
+    body{
+        .content-wrapper{
+            height: 80% !important;
+            background-image: url(images/bg-pattern-mobile.svg);
+            background-repeat: no-repeat;
+            background-position: top;
+            background-size: 50%;
+            .row{
+                height: 100% !important;
+                padding: 0;
+                .image-wrapper{
+                    height: 20% !important;
+                    .woman{
+                        width: 50%;
+                        margin-left: 0;
+                        margin-top: -15%;
+                    }
+                    .box{
+                        width: 25% !important;
+                        margin-left: -35%;
+                        margin-top: -25%;
+                    }
+                    
+                }
+                .faq-wrapper{
+                    margin-top: 20%;
+                    height: 60% !important;
+                    padding: 0;
+                    h1{
+                        text-align: center;
+                    }
+                }
+            }
+        }       
+    }
+}
+@media screen and (max-width: 580px){
+    body{
+        .content-wrapper{
+            height: 80% !important;
+            width: 90%;
+        }
+    }
+}
